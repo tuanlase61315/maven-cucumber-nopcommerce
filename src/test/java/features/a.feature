@@ -1,6 +1,23 @@
 @register
 Feature: Register Feature
 
+
+	@registerValid
+	Scenario: Register User With Valid Data
+		Given Click to "Register" link text
+		When Select to Gender raido
+		And Input to "FirstName" textbox with valid data
+		And Input to "LastName" textbox with valid data
+		And Select Date Of Birth dropdown
+		And Input to "Email" textbox with valid data
+		And Input to "Company" textbox with valid data
+		And Input to "Password" textbox with valid data
+		And Input to "ConfirmPassword" textbox with valid data
+		And Click to "Register" button
+		Then Verify Register Message is displayed
+		Then Click to "Log out" link text
+		
+
  @verifyRegister
 	Scenario: Register with empty data
 		Given Click to "Register" link text
@@ -23,7 +40,7 @@ Feature: Register Feature
 		Then Verify error message "Wrong email" is displayed at "Email"
 	
 	Scenario: Register User With Email Already Exists	
-		When Input to "Email" textbox with "automationfc.vn@gmail.com"
+		When Input to "Email" textbox with valid data
 		And Input to "FirstName" textbox with valid data
 		And Input to "LastName" textbox with valid data
 		And Select Date Of Birth dropdown
@@ -45,18 +62,5 @@ Feature: Register Feature
 		And Click to "Register" button
 		Then Verify error message "The password and confirmation password do not match." is displayed at "ConfirmPassword"
 	
- @registerValid
-	Scenario: Register User With Valid Data
-		When Select to Gender raido
-		And Input to "FirstName" textbox with valid data
-		And Input to "LastName" textbox with valid data
-		And Select Date Of Birth dropdown
-		And Input to "Email" textbox with valid data
-		And Input to "Company" textbox with valid data
-		And Input to "Password" textbox with valid data
-		And Input to "ConfirmPassword" textbox with valid data
-		And Click to "Register" button
-		Then Verify Register Message is displayed
-		Then Click to "Log out" link text
-		
+ 
 

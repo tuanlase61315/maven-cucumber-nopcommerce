@@ -23,5 +23,8 @@ public class PageGeneratorManager {
 	}
 	
 	
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
+		return new MyAccountPageObject(driver);
+	}
 
 }

@@ -52,4 +52,28 @@ public class FakerConfig {
 		return faker.internet().password();
 	}
 	
+	public static String getEditFirstName() {
+		return faker.address().firstName();		
+	}
+	
+	public static String getEditLastName() {
+		return faker.address().lastName();
+	}
+	
+	public static String getEditCompanyName() {
+		return faker.company().name();
+	}
+	
+	public static String getEditFullName() {
+		return faker.name().fullName();
+	}
+	
+	public static String getEditAddress() {
+		return faker.address().streetAddress();
+	}
+	
+	public static String getEditEmail() {
+		return faker.internet().emailAddress();
+	}
+	
 }

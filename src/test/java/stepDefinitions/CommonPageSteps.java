@@ -114,7 +114,7 @@ public class CommonPageSteps {
 				break;
 			}
 		case "The specified email already exists":
-			Assert.assertEquals(commonPage.getErrorMessageAtNotification(), errorMessage);
+			Assert.assertEquals(commonPage.getErrorMessageAtLine02Notification(), errorMessage);
 			break;
 		case "Password must meet the following rules:":
 			Assert.assertEquals(commonPage.getRulePasswordErrorMessage(), errorMessage);
@@ -125,12 +125,26 @@ public class CommonPageSteps {
 		case "The password and confirmation password do not match.":
 			Assert.assertEquals(commonPage.getItemErrorMessageByID(driver, "ConfirmPassword-error"), errorMessage);
 			break;
+		case "Please enter your email":
+			Assert.assertEquals(commonPage.getItemErrorMessageByID(driver, "Email-error"), errorMessage);
+			break;
+		case "Login was unsuccessful. Please correct the errors and try again.":
+			Assert.assertEquals(commonPage.getErrorMessageAtLine01Notification(), errorMessage);
+			break;
+		case "No customer account found":
+			Assert.assertEquals(commonPage.getErrorMessageAtLine02Notification(), errorMessage);
+			break;	
+		case "The credentials provided are incorrect":
+			Assert.assertEquals(commonPage.getErrorMessageAtLine02Notification(), errorMessage);
+			break;
 		}
+		
+		
 	}
-	
-	  @Then("^Verify \"([^\"]*)\" link text is displayed$")
-	    public void verifyDynamicLinkTextIsDisplayed(String textLink) {
-		  Assert.assertTrue(commonPage.isDynamicTextLinkIsDisplayed(driver, textLink));  
-	    }
+
+	@Then("^Verify \"([^\"]*)\" link text is displayed$")
+	public void verifyDynamicLinkTextIsDisplayed(String textLink) {
+		Assert.assertTrue(commonPage.isDynamicTextLinkIsDisplayed(driver, textLink));
+	}
 
 }

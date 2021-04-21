@@ -15,6 +15,16 @@ public class UserData {
 		public static String company = FakerConfig.getCompanyName();
 		public static String password = FakerConfig.getPassword();
 
+	
+		public static String editDay = "20";
+		public static String editMonth = "March";
+		public static String editYear = "1993";
+		public static String editGender = "Female";
+		
+		public static String editFirstname = FakerConfig.getEditFirstName();
+		public static String editLastname = FakerConfig.getEditLastName();
+		public static String editEmail =  FakerConfig.getEditEmail();
+		public static String editCompany = FakerConfig.getEditCompanyName();
 	}
 
 }

@@ -13,9 +13,14 @@ public class CommonPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public String getErrorMessageAtNotification() {
-		waitForElementVisible(driver, RegisterPageUI.ERROR_MESSAGE_AT_NOTIFICATION);
-		return getTextElement(driver, RegisterPageUI.ERROR_MESSAGE_AT_NOTIFICATION);
+	public String getErrorMessageAtLine01Notification() {
+		waitForElementVisible(driver, CommonPageUI.ERROR_MESSAGE_lINE_01_AT_NOTIFICATION);
+		return getTextElement(driver, CommonPageUI.ERROR_MESSAGE_lINE_01_AT_NOTIFICATION);
+	}
+
+	public String getErrorMessageAtLine02Notification() {
+		waitForElementVisible(driver, CommonPageUI.ERROR_MESSAGE_LINE_02_AT_NOTIFICATION);
+		return getTextElement(driver, CommonPageUI.ERROR_MESSAGE_LINE_02_AT_NOTIFICATION);
 	}
 
 	public String getRulePasswordErrorMessage() {
@@ -30,8 +35,8 @@ public class CommonPageObject extends BasePage {
 
 	// DYNAMIC LOCATOR
 	public void clickToDynamicTextLinkByText(WebDriver driver, String textValue) {
-		waitForElementClickable(driver, CommonPageUI.DYNAMIC_TEXT_LINK_BY_TEXT, textValue);
-		clickToElement(driver, CommonPageUI.DYNAMIC_TEXT_LINK_BY_TEXT, textValue);
+		waitForElementClickable(driver, CommonPageUI.DYNAMIC_TEXT_LINK_HEADER_BY_TEXT, textValue);
+		clickToElement(driver, CommonPageUI.DYNAMIC_TEXT_LINK_HEADER_BY_TEXT, textValue);
 	}
 
 	public void inputToDynamicTextboxByName(WebDriver driver, String textboxName, String inputValue) {
@@ -48,10 +53,10 @@ public class CommonPageObject extends BasePage {
 		waitForElementVisible(driver, CommonPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, idValue);
 		return getElementText(driver, CommonPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, idValue);
 	}
-	
+
 	public boolean isDynamicTextLinkIsDisplayed(WebDriver driver, String textLinkName) {
-		waitForElementVisible(driver, CommonPageUI.DYNAMIC_TEXT_LINK_BY_TEXT, textLinkName);
-		return isElementDisplay(driver, CommonPageUI.DYNAMIC_TEXT_LINK_BY_TEXT, textLinkName);
+		waitForElementVisible(driver, CommonPageUI.DYNAMIC_TEXT_LINK_HEADER_BY_TEXT, textLinkName);
+		return isElementDisplay(driver, CommonPageUI.DYNAMIC_TEXT_LINK_HEADER_BY_TEXT, textLinkName);
 	}
 
 }
